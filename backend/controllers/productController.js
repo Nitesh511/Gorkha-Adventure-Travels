@@ -1,4 +1,6 @@
 const Product=require("../models/productModel");
+const axios =require("axios");
+
 
 
 
@@ -71,3 +73,21 @@ exports.deleteProducts = async (req, res, next) => {
         });
     }
 };
+
+
+exports.getProductDetails=async(req,res,next)=>{
+    const product = await Product.findById(req.params.id);
+
+    if(!product){
+        return res.status(500).json({
+            success:false,
+            message:"Product Not Found"
+        })
+    }
+    res.status(200).json({
+        success:true,
+        product
+    })
+}
+
+
