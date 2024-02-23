@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import video from "../../assets/video.mp4";
+import { getProduct } from '../../../actions/productActions';
+import { useDispatch } from 'react-redux';
+
+
+
 
 const Homepage = () => {
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(getProduct());
+  },[dispatch]);
   return (
     <div className='relative w-full h-full'>
       <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-3xl font-bold">
