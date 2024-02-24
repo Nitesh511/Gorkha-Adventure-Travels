@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import video from "../../assets/video.mp4";
-import { getProduct } from '../../../actions/productActions';
+import { getProduct } from '../../actions/productActions';
 import { useDispatch } from 'react-redux';
-
-
-
 
 const Homepage = () => {
   const dispatch=useDispatch();
